@@ -279,8 +279,7 @@ var Message = module.exports = React.createClass({
       content = _.trim(content.replace(/^\/me ?/, ''))
       messageRender = (
         <div className="message">
-          <MessageText content={content} className="message-emote" style={{background: 'hsl(' + message.getIn(['sender', 'hue']) + ', 65%, 95%)',
-                                                                           borderBottom: '2px solid hsl(' + message.getIn(['sender', 'session_hue']) + ', 65%, 95%)'}} />
+          <MessageText content={content} className="message-emote" style={{background: 'hsl(' + message.getIn(['sender', 'hue']) + ', 65%, 95%)'}} />
           {messageAgo}
         </div>
       )
@@ -327,7 +326,10 @@ var Message = module.exports = React.createClass({
           {time.format('h:mma')}
         </time>}
         <div className={classNames(lineClasses)} onClick={this.onClick} onMouseDown={this.onMouseDown} onMouseEnter={this.onMouseEnter}>
-          <MessageText className="nick" onlyEmoji={true} style={{background: 'hsl(' + message.getIn(['sender', 'hue']) + ', 65%, 85%)'}} content={message.getIn(['sender', 'name'])} />
+          <MessageText className="nick" onlyEmoji={true}
+                       style={{background: 'hsl(' + message.getIn(['sender', 'hue']) + ', 65%, 85%)',
+                               borderBottom: '2px solid hsl(' + message.getIn(['sender', 'session_hue']) + ', 65%, 50%)'}}
+                       content={message.getIn(['sender', 'name'])} />
           <span className="content">
             {messageRender}
             {messageEmbeds}

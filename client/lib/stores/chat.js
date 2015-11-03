@@ -121,7 +121,7 @@ module.exports.store = Reflux.createStore({
       }
     } else if (ev.type == 'hello-event') {
       this.state.id = ev.data.session.id
-      this.state.isManager = ev.data.session.is_manager
+      this.state.isManager = true
       this.state.isStaff = ev.data.session.is_staff
       this.state.authType = ev.data.room_is_private ? 'passcode' : 'public'
       if (ev.data.account_has_access) {

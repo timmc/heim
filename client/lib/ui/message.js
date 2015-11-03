@@ -279,7 +279,8 @@ var Message = module.exports = React.createClass({
       content = _.trim(content.replace(/^\/me ?/, ''))
       messageRender = (
         <div className="message">
-          <MessageText content={content} className="message-emote" style={{background: 'hsl(' + message.getIn(['sender', 'hue']) + ', 65%, 95%)'}} />
+          <MessageText content={content} className="message-emote" style={{background: 'hsl(' + message.getIn(['sender', 'hue']) + ', 65%, 95%)',
+                                                                           borderBottom: '2px solid hsl(' + message.getIn(['sender', 'session_hue']) + ', 65%, 95%)'}} />
           {messageAgo}
         </div>
       )

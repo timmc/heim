@@ -328,7 +328,7 @@ var Message = module.exports = React.createClass({
         <div className={classNames(lineClasses)} onClick={this.onClick} onMouseDown={this.onMouseDown} onMouseEnter={this.onMouseEnter}>
           <MessageText className="nick" onlyEmoji={true}
                        style={{background: 'hsl(' + message.getIn(['sender', 'hue']) + ', 65%, 85%)',
-                               borderBottom: '2px solid hsl(' + message.getIn(['sender', 'session_hue']) + ', 65%, 50%)'}}
+                               borderBottom: '2px solid hsl(' + message.getIn(['sender', 'account_hue']) + ', 65%, 50%)'}}
                        content={message.getIn(['sender', 'name'])} />
           <span className="content">
             {messageRender}

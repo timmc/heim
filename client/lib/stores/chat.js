@@ -214,7 +214,7 @@ module.exports.store = Reflux.createStore({
           }
         }
         message.sender.hue = hueHash.hue(message.sender.name)
-        message.sender.session_hue = hueHash.hue(message.sender.session_id)
+        message.sender.account_hue = hueHash.hue(message.sender.id)
         who.mergeIn([message.sender.session_id], {
           lastSent: message.time
         })
